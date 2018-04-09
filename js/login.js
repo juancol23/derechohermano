@@ -30,7 +30,7 @@ function observador(){
 
             var url_redi_local = 'http://localhost/derechohermano/publicar.html';
                                   
-            var url_redi_remote = 'derechohermano/publicar.html';
+            var url_redi_remote = '/publicar.html';
 
              if(url_condition == "http://localhost/"){
                 console.log("Test"); 

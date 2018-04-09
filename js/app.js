@@ -26,8 +26,8 @@
               console.log(`${doc.id} => ${doc.data().titulo}`);
               contenido.innerHTML += `
            
-              	<div class="post-preview">
-	                    <a href="post.html">
+              	<div class="post-preview" onclick="redireccionar('${doc.id}','${doc.data().titulo}','${doc.data().sumilla}','${doc.data().descripcion}','${doc.data().urlImagen}','${doc.data().autor}');">
+	                    <a href="#">
 	                      <h2 class="post-title">
 	                        ${doc.data().titulo}
 	                      </h2>
@@ -47,6 +47,47 @@
               `
           });
       });
+
+  function redireccionar(id, titulo, sumilla, descripcion, urlImagen, autor){
+
+
+      let post = {
+          titulo: titulo,
+          sumilla: sumilla,
+          descripcion: descripcion,
+          urlImagen: urlImagen,
+          autor: autor
+         
+      }
+
+      localStorage.setItem("post", JSON.stringify(post));
+
+      console.log("post ---- .-.- -- -- - ----" + JSON.parse(localStorage.getItem('post')));
+
+
+      var URLactual = window.location.href;
+      let url_condition = URLactual.substr(0,17);
+
+      var url_redi_local = 'http://localhost/derechohermano/post.html';
+                            
+      var url_redi_remote = 'https://juanvaldemar.github.io/derechohermano/post.html';
+
+       if(url_condition == "http://localhost/"){
+          console.log("Test"); 
+          location.href= url_redi_local;
+        }else{
+         console.log("Producción")
+         location.href= url_redi_remote;
+        }
+        
+   
+      // window.location.href = "http://localhost/derechohermano/post.html";
+
+      //let order = JSON.parse(localStorage.getItem('order'));
+
+
+
+    }
 
 
       function registrar(){
@@ -76,3 +117,5 @@
 
         
       }
+
+ 
