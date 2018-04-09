@@ -27,7 +27,7 @@
               contenido.innerHTML += `
            
               	<div class="post-preview" onclick="redireccionar('${doc.id}','${doc.data().titulo}','${doc.data().sumilla}','${doc.data().descripcion}','${doc.data().urlImagen}','${doc.data().autor}');">
-	                    <a href="#">
+	                    <a >
 	                      <h2 class="post-title">
 	                        ${doc.data().titulo}
 	                      </h2>
@@ -39,7 +39,7 @@
 	                     
 	                    </a>
 	                    <p class="post-meta">Publicado y escrito por 
-	                      <a href="#">${doc.data().autor}</a>
+	                      <a >${doc.data().autor}</a>
 	                      ${doc.data().fecha}</p>
 	            </div>
 	            <hr>
@@ -79,7 +79,7 @@
          console.log("Producción")
          location.href= url_redi_remote;
         }
-        
+
    
       // window.location.href = "http://localhost/derechohermano/post.html";
 
