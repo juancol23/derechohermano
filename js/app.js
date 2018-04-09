@@ -20,7 +20,8 @@
       //Leer documentos
       var contenido = document.getElementById('contenido');
  
-      db.collection("feed").onSnapshot((querySnapshot) => {
+      db.collection("feed").orderBy('fecha', 'asc')
+      .onSnapshot((querySnapshot) => {
           contenido.innerHTML = '';
           querySnapshot.forEach((doc) => {
               console.log(`${doc.id} => ${doc.data().titulo}`);

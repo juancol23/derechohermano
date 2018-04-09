@@ -58,7 +58,7 @@
                document.getElementById('sumilla').value = "";
                document.getElementById('descripcion').value = "";
                document.getElementById('urlImagen').value = "";
-               document.getElementById('autor').value = "";
+               document.getElementById('autor').value = "El camaleón juridico";
 
           })
 
@@ -152,7 +152,7 @@ function eliminar(id){
                   document.getElementById('sumilla').value = "";
                   document.getElementById('descripcion').value = "";
                   document.getElementById('urlImagen').value = "";
-                  document.getElementById('autor').value = "";
+                  document.getElementById('autor').value = "El camaleón juridico";
             
             })
             .catch(function(error) {
