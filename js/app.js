@@ -27,7 +27,7 @@
               console.log(`${doc.id} => ${doc.data().titulo}`);
               contenido.innerHTML += `
            
-              	<div class="post-preview" onclick="redireccionar('${doc.id}','${doc.data().titulo}','${doc.data().sumilla}','${doc.data().descripcion}','${doc.data().urlImagen}','${doc.data().autor}');">
+              	<div class="post-preview" onclick="redireccionar('${doc.id}','${doc.data().titulo}','${doc.data().sumilla}','${doc.data().urlImagen}','${doc.data().autor}');">
 	                    <a >
 	                      <h2 class="post-title">
 	                        ${doc.data().titulo}
@@ -49,13 +49,13 @@
           });
       });
 
-  function redireccionar(id, titulo, sumilla, descripcion, urlImagen, autor){
+  function redireccionar(id, titulo, sumilla, urlImagen, autor){
 
 
       let post = {
           titulo: titulo,
           sumilla: sumilla,
-          descripcion: descripcion,
+          // descripcion: descripcion,
           urlImagen: urlImagen,
           autor: autor
          
