@@ -40,8 +40,8 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">Sobre Mí</a>
-            </li> 
-            <li class="nav-item">
+            </li>
+           <li class="nav-item">
               <a class="nav-link" href="contact.html">Contactame</a>
             </li>
             <li class="nav-item">
@@ -53,17 +53,15 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('img/contact-bg.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <h1>Conciencia del Derecho</h1>
-              <span class="subheading">Publicado y escrito por Camaleón Jurídico</span>
+            <div class="page-heading">
+              <h1>Inicia Sesión</h1>
+              <span class="subheading">Ingresa usuario y contraseña para publicar</span>
             </div>
-               <!-- <button class="btn info" onclick="registrar()">Subir Data</button> -->
-                
           </div>
         </div>
       </div>
@@ -73,10 +71,44 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div id="contenido">
+          <p>Necesitamos que inicies sesión con tu cuenta para poder publicar aquí.</p>
+          <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+          <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+          <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+          <form name="sentMessage" id="contactForm" novalidate>
+          
+          <div id="validacion_user">
             
-          </div> 
+          </div>
+            
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Porfavor ingrese su correo">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
 
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Constraseña</label>
+                <input type="password" class="form-control" placeholder="Contraseña" id="password" required data-validation-required-message="Porfavor ingrese su password.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+ 
+         
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button onclick="ingreso()" class="btn btn-primary" id="sendMessageButton">Iniciar Sesión</button>
+              <br>
+              <div id="cerrar">
+                
+              </div>
+            </div>
+
+          </form>
         </div>
       </div>
     </div>
@@ -124,28 +156,29 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script> -->
+        <script>
+       
+          var config = {
+            apiKey: "AIzaSyCE-n4QOuKmPQGnpLdT1svm5z5C1lobZs4",
+            authDomain: "camaleonjuridico-92ad6.firebaseapp.com",
+            databaseURL: "https://camaleonjuridico-92ad6.firebaseio.com",
+            projectId: "camaleonjuridico-92ad6",
+            storageBucket: "",
+            messagingSenderId: "913990592685"
+          };
+          firebase.initializeApp(config);
+        </script>
 
-<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
-    <script>
-      // Initialize Firebase
-      // var config = {
-      //   apiKey: "AIzaSyCE-n4QOuKmPQGnpLdT1svm5z5C1lobZs4",
-      //   authDomain: "camaleonjuridico-92ad6.firebaseapp.com",
-      //   databaseURL: "https://camaleonjuridico-92ad6.firebaseio.com",
-      //   projectId: "camaleonjuridico-92ad6",
-      //   storageBucket: "",
-      //   messagingSenderId: "913990592685"
-      // };
-      // firebase.initializeApp(config);
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
 
   </body>
 
